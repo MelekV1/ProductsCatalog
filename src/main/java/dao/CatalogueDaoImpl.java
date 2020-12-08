@@ -37,8 +37,7 @@ public class CatalogueDaoImpl implements ICatalogueDao{
 	}
 	
 	public List<Produit> produitsParMC(String mc) {
-		Query query = entityManager.createQuery("select p from Produit p"
-				+ "where p.designation like :x");
+		Query query = entityManager.createQuery("select p from Produit p where p.designation like :x");
 		query.setParameter("x", "%"+mc+"%");
 		return query.getResultList();
 	}
